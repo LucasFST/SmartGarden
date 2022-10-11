@@ -1,0 +1,235 @@
+
+
+*{
+    font-family: "Gill Sans", sans-serif;
+}
+
+header {
+    background-color: #68CB38;
+    background-image: url("banniere.png");
+    background-size: cover; /*pour couvrir tout le header*/
+    text-align: center;
+    border-left-style: solid;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-width: 0.5em;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+textarea {
+    resize: none; /*afin que les zones de texte ne soient pas redimensionnables*/
+}
+
+#divCentral {
+    display: flex; /*Container en mode bloc avec agencement automatique et adaptatif*/
+    justify-content: space-between; /*aligner les items selon leur axe principal (ici en ligne) avec des espaces entre eux */
+    align-items: stretch; /*aligne les items sur leur axe secondaire (ici en hauteur) ici ils sont étirés au max*/
+    margin: auto;
+    box-sizing: border-box; /*indique au navigateur de prendre en compte la bordure et le remplissage dans la valeur définie pour la largeur et la hauteur.*/
+    height: 100%;
+    border-style: solid;
+    border-width: 0.5em;
+}
+
+nav {
+    flex : 3;
+    background-color: #5D2500;
+    line-height: 2em;
+    border-color: #000000;
+    color: #FFFFFF
+}
+nav a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+nav a:active,nav a:hover,nav a:visited {
+    color: #a6f943;
+    text-decoration: none;
+}
+
+main {
+	flex : 10;
+    background-color: #EEEEEE;
+    padding-left: 1em;
+    padding-top: 1em;
+    border-left-style: solid;
+    border-width: 0.5em;
+    text-align: center;
+  
+}
+
+footer {
+	display: flex;     /*Container en mode bloc avec agencement automatique et adaptatif*/
+	justify-content: space-between;    /*aligner les items selon leur axe principal (ici en ligne) avec des espaces entre eux */
+    background-color: #68CB38;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-width: 0.5em;
+    padding: 1em;
+    
+}
+
+.stat {
+
+    border-top-style: solid;
+    border-width: 0.5em;
+    border-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.accueil{
+    font-size: 1.5rem;
+}
+
+.tableau{
+    display: inline-flex;   /*container en mode inline avec agencement automatique et adaptatif*/      
+    padding: 1em;
+    margin: 1.5em;
+    border-style: solid;
+    border-width: 0.2em;
+    border-color:#68CB38;
+    justify-content: center;    /*aligner les items selon leur axe principal (ici en ligne) au centre */
+    margin-inline: 30%;     /*correspond à margin-left et margin-right*/
+}
+
+
+/* pour que le sélecteur multiple ait la même hauteur que le simple */
+select[multiple] {
+  height: 1.5em;
+  vertical-align: top;
+}
+
+select[multiple]:focus, select[multiple]:active {  /*:focus c'est quand l'élément à le focus, qu'il est sélectionné*/
+  height: auto;
+}
+
+
+.error{
+    background-color: #ffaeae;
+    border-radius: 0.5em;
+    color: #d00;
+    font-weight: bold;
+    padding: 0.5em;
+    font-size: 0.75rem;
+    margin-inline: 25%;     /*correspond à margin-left et margin-right*/
+}
+
+.success{
+    background-color: #b7ff6a;
+    border-radius: 0.5em;
+    color: #5eb500;
+    font-weight: bold;
+    padding: 0.5em;
+    font-size: 0.75rem;
+    margin-inline: 25%;     /*correspond à margin-left et margin-right*/
+}
+
+.légende{
+    font-size: 0.7rem;
+    color: #6ac300;
+}
+
+
+input:invalid {border: red solid 2px;}  /*pour les champs input invalides des formulaires*/
+
+form span{
+    color: #6ac300;     /*pour les * obligatoires des formulaires*/
+}
+
+.affichageParcelle{
+    display: inline-flex;   /*container en mode inline avec agencement automatique et adaptatif*/  
+    margin: 1.5em;
+    border-style: solid;
+    border-width: 0.2em;
+    border-color:#68CB38;
+    justify-content: center;    /*aligner les items selon leur axe principal (ici en ligne) au centre */
+    border-radius: 1em;
+}
+
+.tableauParcelle{
+    border-collapse: collapse;  /*fusionner les bordures du tableau*/
+}
+
+table.tableauParcelle td, table.tableauParcelle th  {
+    border-style: solid;
+    border-width: 0.1em;
+    border-color:#68CB38;
+    padding: 0.5em;
+}
+
+
+form{
+    border-style: solid;
+    border-width: 0.2em;
+    margin: 1.5em;
+    border-color:#5D2500;
+    padding: 1em;
+    display: inline-block;  /*élément se plaçant placé à côté d’un autre, largeur déterminée par le contenu (comme <span>) et il est redimensionnable*/
+    border-radius: 1em;
+}
+
+
+
+
+.slider-scroll {
+
+width: 600px;
+max-width: 100%;    /*largeur maximale*/
+max-height:398px;   /*hauteur maxiaml*/
+margin: 2rem auto;
+display: flex;      /*Container en mode bloc avec agencement automatique et adaptatif*/
+overflow-x: hidden;     /*Le contenu est 'rogné' afin de tenir horizontalement dans la boîte de remplissage et aucun ascenseur horizontal n'est affiché (si il y a plusieurs photo, celle dépassant du cadre sont cachées)*/
+scroll-behavior: smooth;         /*Le défilement est doux */   
+scroll-snap-type: x mandatory;  /*Le conteneur qui défile s'accroche aux positions sur l'axe horizontal uniquement -> défilement horizontal (selon les x)
+                                Le viewport visuel du conteneur (ce qu'on voit du conteneur) doit s'arrêter sur les points d'accroche s'il n'est pas en cours de défilement.*/
+border: solid;
+border-radius: 10px;
+border-width: 5px;
+}
+
+.slider-scroll img {
+scroll-snap-align: center;  /* Le point d'alignement situé au centre de l'axe horizontale (des x) et à l'intérieur de la boîte de défilement est une position d'accroche sur cet axe.*/
+min-width: 100%;    /*largeur minimale*/
+}
+
+.ancre {
+    
+margin: 1rem auto;
+display: flex;   /*Container en mode bloc avec agencement automatique et adaptatif*/
+justify-content: center;    /*aligner les items selon leur axe principal (ici en ligne) au centre */
+
+}
+    
+.ancre li{
+    
+display: inline-flex;   /*container en mode inline avec agencement automatique et adaptatif*/  
+justify-content: center;    /*aligner les items selon leur axe principal (ici en ligne) au centre */
+align-items:center;     /*aligne les items sur leur axe secondaire (ici en hauteur) au centre*/
+width: 30px;
+height: 30px;
+background: #5d2500;
+border-radius: 50%;
+}
+    
+.ancre li a{
+    color: #5cb431
+}
+    
+.ancre li:not(:last-child) /*appliquer le margin-right à tous sauf au dernier <li>, c-à-d le 'last-child'*/
+{   
+  margin-right: 30px;
+}
+
+
+.ancre li a:hover {
+  opacity: 0.5;
+}
+
